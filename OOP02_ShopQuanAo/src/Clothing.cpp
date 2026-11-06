@@ -1,4 +1,6 @@
 #include "../include/Clothing.h"
+#include <iomanip>
+#include <sstream>
 Clothing::Clothing():Product(),size(""),color(""),brand(""){
 }
 Clothing::Clothing(string id,string name,double importPrice,double sellPrice,int quantity,string size,string color,string brand)
@@ -16,11 +18,24 @@ string Clothing::getBrand()const{
 	return brand;
 }
 void Clothing::display()const{
-	cout << "[Ao quan] ID: " << id << " | Ten: " << name
-	     << " | Size: " << size << " | Mau: " << color
-	     << " | Brand: " << brand << " | Gia ban: " << sellPrice
-	     << " | Ton kho: " << quantity << endl;
+	cout << "\n[AO QUAN]";
+    cout << "\n + Ma SP     : " << id;
+    cout << "\n + Ten       : " << name;
+    cout << "\n + Size      : " << size;
+    cout << "\n + Mau sac   : " << color;
+    cout << "\n + Thuong hieu: " << brand;
+    cout << "\n + Gia ban   : " << fixed << setprecision(0) << sellPrice << " VND";
+    cout << "\n + Ton kho   : " << quantity;
+    cout << "\n";
 }
 double Clothing::calcProfit()const{
 	return (sellPrice-importPrice)*quantity;
+}
+string Clothing::getFileLine()const{
+	stringstream ss;
+	ss << "CLOTHING|" << id << "|" << name << "|" 
+       << fixed << setprecision(0) << importPrice << "|" 
+       << fixed << setprecision(0) << sellPrice << "|" 
+       << quantity << "|" << size << "|" << color << "|" << brand;
+    return ss.str();
 }

@@ -15,5 +15,6 @@ class Clothing:public Product{
 		string getSize()const;
 		string getColor()const;
 		string getBrand()const;
+		string getFileLine()const override;
 };
 #endif

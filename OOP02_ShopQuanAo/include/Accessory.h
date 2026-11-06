@@ -13,5 +13,6 @@ class Accessory:public Product{
 		double calcProfit()const override;
 		string getMaterial()const;
 		string getType()const;
+		string getFileLine()const override;
 };
 #endif

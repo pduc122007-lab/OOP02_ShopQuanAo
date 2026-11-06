@@ -21,6 +21,7 @@ class Person{
 		void setName(string name);
 		void setPhone(string phone);
 		void setAddress(string address);
+		virtual string getFileLine() const = 0;
 };
 #endif
 

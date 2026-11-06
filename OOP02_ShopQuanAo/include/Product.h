@@ -23,5 +23,6 @@ class Product{
 		int getQuantity() const;
 		void setQuantity(int q);
 		void decreaseQuantity(int q);
+		virtual string getFileLine() const = 0;
 };
 #endif

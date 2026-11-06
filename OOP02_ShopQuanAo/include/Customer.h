@@ -15,5 +15,6 @@ class Customer:public Person{
 		int getPoints() const;
 		string getType() const;
 		void addPoints(int p);
+		string getFileLine()const override;
 };
 #endif

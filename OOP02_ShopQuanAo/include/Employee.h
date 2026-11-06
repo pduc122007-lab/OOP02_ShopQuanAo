@@ -12,5 +12,9 @@ class Employee:public Person{
 		~Employee();
 		void display()const override;
 		double calcSalary() const;
+		string getFileLine()const override;
+		double getBaseSalary()const;
+		int getWorkingDays()const;
+		string getRole()const;
 };
 #endif

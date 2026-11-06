@@ -7,7 +7,14 @@ Customer::Customer(string id,string name,string phone,string address,int points)
 Customer::~Customer(){
 }
 void Customer::display()const{
-	cout << "KH: " << id << " | " << name << " | " << phone << " | " << address << " | Diem: " << points << " | Loai: " << type << endl;
+	cout << "\n[KHACH HANG]";
+    cout << "\n + Ma KH   : " << id;
+    cout << "\n + Ten     : " << name;
+    cout << "\n + SDT     : " << phone;
+    cout << "\n + Dia chi : " << address;
+    cout << "\n + Diem    : " << points;
+    cout << "\n + Loai    : " << type;
+    cout << "\n";
 }
 double Customer::getDiscountRate()const{
 	if(type == "VIP"){
@@ -34,4 +41,7 @@ void Customer::updateType(){
 void Customer::addPoints(int p){
 	points+=p;
 	updateType();
+}
+string Customer::getFileLine()const{
+	return id + "|" + name + "|" + phone + "|" + address + "|" + to_string(points);
 }
